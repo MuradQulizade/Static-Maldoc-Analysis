@@ -18,26 +18,7 @@ The `.doc` file was sourced from a public malware sample repository - MalwareBaa
 
 Running `oledump.py` against the sample enumerates every OLE stream inside the compound file:
 
-```
-1:        114 '\x01CompObj'
-2:        280 '\x05DocumentSummaryInformation'
-3:        436 '\x05SummaryInformation'
-4:      10599 '1Table'
-5:     134135 'Data'
-6:        610 'Macros/PROJECT'
-7:        146 'Macros/PROJECTwm'
-8: M     3616 'Macros/VBA/Module1'
-9: M     3196 'Macros/VBA/Module10'
-10: M    1953 'Macros/VBA/Module11'
-11: M    1217 'Macros/VBA/Module12'
-12: M    3964 'Macros/VBA/ThisDocument'
-13:      4542 'Macros/VBA/_VBA_PROJECT'
-14:       975 'Macros/VBA/dir'
-15:        76 'ObjectPool/_1671853185/\x01CompObj'
-16: O   570731 'ObjectPool/_1671853185/\x01Ole10Native'
-17:         6 'ObjectPool/_1671853185/\x03ObjLnfo'
-18:      4096 'WordDocument'
-```
+![oledump.py stream listing](screenshots/01-oledump-streams.png)
 
 Streams **8–12** are flagged `M` (macro), confirming five VBA modules are embedded:
 
