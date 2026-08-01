@@ -2,7 +2,7 @@
 
 ## Overview
 
-This lab documents the static analysis of a suspicious `.doc` file obtained from a public sample repository. The sample was flagged for review based on its origin and file type, then examined using `oledump.py` and `olevba` on a REMnux analysis VM.
+This lab documents the static analysis of a suspicious `.doc` file obtained from MalwareBaazar. The sample was flagged for review based on its origin and file type, then examined using `oledump.py` and `olevba` on a REMnux analysis VM.
 
 **Sample:** `8bcf45c2de07f322b8efb959e3cef38fb9983fdb8b932c527321fd3db5e444c8.doc`
 
@@ -12,7 +12,7 @@ This lab documents the static analysis of a suspicious `.doc` file obtained from
 
 ## 1. Why This File Was Treated as Suspicious
 
-The `.doc` file was sourced from a public malware sample repository, not a legitimate document workflow. Legacy `.doc` (OLE Compound File) format is a common vehicle for embedding VBA macros, and any macro-enabled document from an untrusted source is treated as a potential first-stage payload — the initial foothold in a larger intrusion chain (dropper → payload → persistence/C2).
+The `.doc` file was sourced from a public malware sample repository - MalwareBaazar. Legacy `.doc` (OLE Compound File) format is a common vehicle for embedding VBA macros, and any macro-enabled document from an untrusted source is treated as a potential first-stage payload — the initial foothold in a larger intrusion chain (dropper → payload → persistence/C2).
 
 ## 2. Structural Overview (`oledump.py`)
 
