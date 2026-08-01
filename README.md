@@ -36,17 +36,7 @@ Stream 16 (`ObjectPool/.../Ole10Native`, flagged `O`) is also notable — at ~57
 
 `olevba`'s keyword analysis flags the following:
 
-| Type | Keyword | Description |
-|---|---|---|
-| AutoExec | `Document_Open` | Runs automatically when the document is opened |
-| Suspicious | `Shell` | May run an executable file or system command |
-| Suspicious | `ShellExecute` | May run an executable file or system command |
-| Suspicious | `Shell32` | May run an executable file or system command |
-| Suspicious | `Call` | May call a DLL (also relevant to XLM/XLF macro abuse) |
-| Suspicious | `CreateObject` | May create an OLE object |
-| Suspicious | `Hex Strings` | Possible string obfuscation |
-| Suspicious | `Base64 Strings` | Possible string obfuscation |
-| IOC | `W0rd.dll` | Executable file name (note the zero substituted for the letter O) |
+![olevba suspicious keyword summary](screenshots/02-olevba-suspicious-keywords.png)
 
 The combination of `Document_Open` + `Shell32`/`ShellExecute` + a disguised `.dll` filename is a strong indicator of an auto-running dropper.
 
